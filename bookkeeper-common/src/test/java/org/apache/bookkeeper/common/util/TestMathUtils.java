@@ -13,8 +13,8 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class TestMathUtils {
-    private expected = 2024;
-    private initialValue = 14;
+    private int expected = 2024;
+    private int initialValue = 1997;
 
     @Test
     public void testFindNextPositivePowerOfTwo() {
