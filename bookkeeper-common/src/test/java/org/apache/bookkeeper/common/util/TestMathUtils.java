@@ -43,7 +43,7 @@ public class TestMathUtils {
 
     @Test
     public void testNowInNano() {
-        assertTrue(nowInNano() >= startNanoTime);
+        assertTrue(MathUtils.nowInNano() >= startNanoTime);
     }
 
     @Test
@@ -63,8 +63,8 @@ public class TestMathUtils {
     @Test
     public void testElapsedMSec() {
         long elapsedNanoTime = System.nanoTime() - startNanoTime;
-
-        assertTrue(MathUtils.elapsedMsec(startNanoTime) >= TimeUnit.NANOSECONDS.toMillis(elapsedNanoTime));
+ 
+        assertTrue(MathUtils.elapsedMSec(startNanoTime) >= TimeUnit.NANOSECONDS.toMillis(elapsedNanoTime));
     }
 
 }
