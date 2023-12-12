@@ -45,7 +45,7 @@ public class TestEntryKey {
 
     @Test
     public long TestEquals() {
-        Integer a = valueOf(66);
+        Integer a = Integer.valueOf(66);
         assertFalse(entryKeyWithParams.equals(a));
         assertFalse(entryKeyWithParams.equals(entryKeyWithoutParams));
         assertTrue(entryKeyWithParams.equals(new EntryKey(testLedgerId, testEntryId)));
