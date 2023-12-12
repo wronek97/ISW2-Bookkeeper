@@ -22,9 +22,9 @@ public class TestMathUtils {
         int divisor[] = new int[] {13, 13, -13, -13, 13, 13, -13, -13};
         int expected[] = new int[] {6, 7, 4, 9, 7, 6, 4, 9};
 
-        assertTrue(dividend.length = length);
-        assertTrue(divisor.length = length);
-        assertTrue(expected.length = length);
+        assertTrue(dividend.length == length);
+        assertTrue(divisor.length == length);
+        assertTrue(expected.length == length);
 
         for(int i = 0; i < length; i++){
             assertEquals(expected[i], MathUtils.signSafeMod(dividend[i], divisor[i]));
