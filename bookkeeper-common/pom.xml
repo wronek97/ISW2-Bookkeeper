@@ -153,9 +153,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
-        <configuration>
+        <!--<configuration>
             <argLine>${jacoco.agent.argLine}</argLine>
-        </configuration>
+        </configuration>-->
       </plugin>
 
       <plugin>
@@ -168,10 +168,10 @@
             <goals>
               <goal>prepare-agent</goal>
             </goals>
-            <configuration>
+            <!--<configuration>
               <propertyName>jacoco.agent.argLine</propertyName>
               <destFile>target/jacoco.exec</destFile>         
-            </configuration>
+            </configuration>-->
           </execution>
           <!-- attached to Maven test phase -->
           <execution>
