@@ -125,10 +125,6 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${maven-javadoc-plugin.version}</version>
         <configuration>
@@ -153,6 +149,15 @@
         </executions>
       </plugin>
       <!-- __________________________________________ HERE MY WORK STARTS __________________________________________ -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+            <!-- Attiva JaCoCo come provider di report -->
+            <argLine>${argLine} -javaagent:${org.jacoco.agent.path}=destfile=target/jacoco.exec</argLine>
+        </configuration>
+      </plugin>
+      
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
