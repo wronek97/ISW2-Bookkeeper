@@ -32,19 +32,19 @@ public class TestEntryKey {
     }
 
     @Test
-    public long TestGetLedgerId() {
+    public void TestGetLedgerId() {
         assertEquals(0, entryKeyWithoutParams.getLedgerId());
         assertEquals(123, entryKeyWithParams.getLedgerId());
     }
 
     @Test
-    public long TestGetEntryId() {
+    public void TestGetEntryId() {
         assertEquals(0, entryKeyWithoutParams.getEntryId());
         assertEquals(456, entryKeyWithParams.getEntryId());
     }
 
     @Test
-    public long TestEquals() {
+    public void TestEquals() {
         Integer a = Integer.valueOf(66);
         assertFalse(entryKeyWithParams.equals(a));
         assertFalse(entryKeyWithParams.equals(entryKeyWithoutParams));
@@ -52,7 +52,7 @@ public class TestEntryKey {
     }
 
     @Test
-    public long TestHashCode() {
+    public void TestHashCode() {
         //(ledgerId * 13) ^ (entryId * 17)
         assertEquals(6263, entryKeyWithoutParams.hashCode());
     }
