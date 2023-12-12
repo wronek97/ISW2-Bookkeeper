@@ -170,7 +170,7 @@
             </goals>
             <configuration>
               <propertyName>jacoco.agent.argLine</propertyName>
-              <destFile>target/target/target/jacoco.exec</destFile>
+              <destFile>../target/target/target/jacoco.exec</destFile>
             </configuration>
           </execution>
           <!-- attached to Maven test phase -->
@@ -182,7 +182,7 @@
             </goals>
             <configuration>
               <!-- Sets the path to the file which contains the execution data. -->
-              <dataFile>target/target/target/jacoco.exec</dataFile>
+              <dataFile>../target/target/target/jacoco.exec</dataFile>
               <!-- Sets the output directory for the code coverage report. -->
               <outputDirectory>target/site/jacoco-ut</outputDirectory>
             </configuration>
