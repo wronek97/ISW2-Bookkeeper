@@ -36,11 +36,8 @@ jobs:
       
     #- name : ba-dua report
     #  run: mvn test -Pba-dua-coverage
-
-    - name: Clean Install
-      run: mvn clean install
-      
-    - name: Build
+    
+    - name: Build with Maven
       run: mvn test --no-transfer-progress
       #run: mvn package
       
