@@ -170,7 +170,7 @@
             </goals>
             <configuration>
               <propertyName>jacoco.agent.argLine</propertyName>
-              <!--<destFile>${project.build.directory}/target/jacoco.exec</destFile>-->
+              <destFile>${project.reporting.outputDirectory}/target/jacoco.exec</destFile>
             </configuration>
           </execution>
           <!-- attached to Maven test phase -->
