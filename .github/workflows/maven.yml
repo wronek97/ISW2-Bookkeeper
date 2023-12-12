@@ -47,5 +47,5 @@ jobs:
     #        target/badua.xml
         
     - name: Build with Maven
-      #run: mvn test
-      run: mvn package
+      run: mvn test
+      #run: mvn package
