@@ -17,8 +17,8 @@ public class TestMathUtils {
     private initialValue = 14;
 
     @Test
-    public void test_findNextPositivePowerOfTwo() {
-        assertEquals(expected, MathUtils.findNextPositivePowerOfTwo(initialValue), 5e-7);
+    public void testFindNextPositivePowerOfTwo() {
+        assertEquals(expected, MathUtils.findNextPositivePowerOfTwo(initialValue));
     }
 
 }
