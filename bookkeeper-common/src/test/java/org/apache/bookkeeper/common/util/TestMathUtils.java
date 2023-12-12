@@ -17,16 +17,16 @@ public class TestMathUtils {
     
     @Test
     public void testSignSafeMod() {
-        final int length = 8;
+        final int testsNum = 8;
         int dividend[] = new int[] {45, -45, 43, -43, 7, -7, 4, -4};
         int divisor[] = new int[] {13, 13, -13, -13, 13, 13, -13, -13};
         int expected[] = new int[] {6, 7, 4, 9, 7, 6, 4, 9};
 
-        assertTrue(dividend.length == length);
-        assertTrue(divisor.length == length);
-        assertTrue(expected.length == length);
+        assertTrue(dividend.length == testsNum);
+        assertTrue(divisor.length == testsNum);
+        assertTrue(expected.length == testsNum);
 
-        for(int i = 0; i < length; i++){
+        for(int i = 0; i < testsNum; i++){
             assertEquals(expected[i], MathUtils.signSafeMod(dividend[i], divisor[i]));
         }
     }
@@ -46,21 +46,21 @@ public class TestMathUtils {
 
     @Test
     public void testElapsedNanos() {
-        int elapsedNanoTime = System.nanoTime() - startNanoTime;
+        long elapsedNanoTime = System.nanoTime() - startNanoTime;
 
         assertTrue(MathUtils.elapsedNanos(startNanoTime) >= elapsedNanoTime);
     }
 
     @Test
     public void testElapsedMicroSec() {
-        int elapsedNanoTime = System.nanoTime() - startNanoTime;
+        long elapsedNanoTime = System.nanoTime() - startNanoTime;
 
         assertTrue(MathUtils.elapsedMicroSec(startNanoTime) >= TimeUnit.NANOSECONDS.toMicros(elapsedNanoTime));
     }
 
     @Test
     public void testElapsedMSec() {
-        int elapsedNanoTime = System.nanoTime() - startNanoTime;
+        long elapsedNanoTime = System.nanoTime() - startNanoTime;
 
         assertTrue(MathUtils.elapsedMsec(startNanoTime) >= TimeUnit.NANOSECONDS.toMillis(elapsedNanoTime));
     }
