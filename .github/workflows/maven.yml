@@ -36,16 +36,16 @@ jobs:
       
     #- name : ba-dua report
     #  run: mvn test -Pba-dua-coverage
-
-    #- name: Save Jacoco, Pit and Ba-dua Reports
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #    name: Jacoco, Pit and Ba-dua Reports
-    #    path: |
-    #        target/site/jacoco
-    #        target/pit-reports
-    #        target/badua.xml
-        
+      
     - name: Build with Maven
       run: mvn test
       #run: mvn package
+      
+    - name: Save Jacoco, Pit and Ba-dua Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: Jacoco, Pit and Ba-dua Reports
+        path: |
+            target/site/jacoco
+    #        target/pit-reports
+    #        target/badua.xml
