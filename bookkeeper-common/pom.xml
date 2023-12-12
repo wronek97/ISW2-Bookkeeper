@@ -152,22 +152,26 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
         <configuration>
-            <!-- Attiva JaCoCo come provider di report -->
-            <argLine>${argLine} -javaagent:${org.jacoco.agent.path}=destfile=target/jacoco.exec</argLine>
+            <argLine>${jacoco.agent.argLine}</argLine>
         </configuration>
       </plugin>
-      
+
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.7</version>
         <executions>
           <execution>
-            <id>prepare-agent</id>
+            <id>jacoco-initialize</id>
             <goals>
               <goal>prepare-agent</goal>
             </goals>
+            <configuration>
+              <propertyName>jacoco.agent.argLine</propertyName>
+              <destFile>target/jacoco.exec</destFile>         
+            </configuration>
           </execution>
           <!-- attached to Maven test phase -->
           <execution>
