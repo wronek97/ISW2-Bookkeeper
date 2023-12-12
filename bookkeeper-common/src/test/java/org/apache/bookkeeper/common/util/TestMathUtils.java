@@ -20,9 +20,9 @@ public class TestMathUtils {
     @Test
     public void testSignSafeMod() {
         final int testsNum = 8;
-        int dividend[] = new int[] {45, -45, 43, -43, 7, -7, 4, -4};
+        int dividend[] = new int[] {45, -45, 45, -45, 7, -7, 7, -7};
         int divisor[] = new int[] {13, 13, -13, -13, 13, 13, -13, -13};
-        int expected[] = new int[] {6, 7, 4, 9, 7, 6, 4, 9};
+        int expected[] = new int[] {6, 7, 6, -19, 7, 6, 7, -20};
 
         assertTrue(dividend.length == testsNum);
         assertTrue(divisor.length == testsNum);
