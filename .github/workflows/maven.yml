@@ -42,13 +42,14 @@ jobs:
       #run: mvn package
 
     - name: list target
-      run: ls target -l
+      run: ls target/bookkeeper-common/site/jacoco -l
       
     - name: Save Jacoco, Pit and Ba-dua Reports
       uses: actions/upload-artifact@v3
       with:
         name: Jacoco, Pit and Ba-dua Reports
         path: |
-            target/site/jacoco
+            target/bookkeeper-common/site/jacoco
+    #        target/site/jacoco
     #        target/pit-reports
     #        target/badua.xml
