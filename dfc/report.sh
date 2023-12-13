@@ -6,4 +6,4 @@ CLASSES="../bookkeeper-server/target/classes"
 XML="../bookkeeper-server/target/badua.xml"
 
 #java -jar ${CLI} report -input ${SER} -classes ${CLASSES} -show-classes -show-methods -xml ${XML}
-java -jar ${CLI} report
+java -jar ${CLI} report -classes ${CLASSES}
