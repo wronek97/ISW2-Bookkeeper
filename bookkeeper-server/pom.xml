@@ -278,7 +278,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
-            <argLine>@{argLine} -javaagent:"dfc/ba-dua-agent-rt-0.6.0-all.jar"</argLine>
+            <argLine>@{argLine}</argLine>
         </configuration>
       </plugin>
 
@@ -372,6 +372,7 @@
             </goals>
             <phase>test</phase>
             <configuration>
+              <argLine>-javaagent:"dfc/ba-dua-agent-rt-0.6.0-all.jar"</argLine>
               <workingDirectory>${project.basedir}</workingDirectory>
               <executable>dfc/report.sh</executable>
             </configuration>
