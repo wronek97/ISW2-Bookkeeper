@@ -1,7 +1,7 @@
 #!/bin/sh
 
 CLI="../dfc/ba-dua-cli-0.6.0-all.jar"
-SER="../bookkeeper-server/coverage.ser"
+SER="../dfc/coverage.ser"
 CLASSES="../bookkeeper-server/target/classes"
 XML="../bookkeeper-server/target/badua.xml"
 
