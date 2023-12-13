@@ -278,7 +278,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
-            <argLine>${jacoco.agent.argLine}</argLine>
+            <argLine>@{argLine}</argLine>
         </configuration>
       </plugin>
 
@@ -292,9 +292,9 @@
             <goals>
               <goal>prepare-agent</goal>
             </goals>
-            <configuration>
-              <propertyName>jacoco.agent.argLine</propertyName>
-            </configuration>
+            <!--<configuration>-->
+              <!--<propertyName>surefire.argLine</propertyName>-->
+            <!--</configuration>-->
           </execution>
           <!-- attached to Maven test phase -->
           <execution>
@@ -310,6 +310,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
@@ -324,7 +325,7 @@
           </execution>
         </executions>
         <configuration>
-          <timeoutConstant>2000</timeoutConstant>
+          <timeoutConstant>5000</timeoutConstant>
           <timeoutFactor>1</timeoutFactor>
           <targetClasses>
             <param>org.apache.bookkeeper.bookie.EntryKey</param>
@@ -340,6 +341,44 @@
           </avoidCallsTo>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <argLine>
+            -javaagent:"dfc/ba-dua-agent-rt-0.6.0-all.jar"
+          </argLine>
+        </configuration>
+      </plugin>
+      <!-- Generate report in xml format -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <executions>
+          <execution>
+            <id>Report</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>test</phase>
+            <configuration>
+              <workingDirectory>${project.basedir}</workingDirectory>
+              <executable>dfc/report.sh</executable>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- __________________________________________ HERE MY WORK ENDS ! __________________________________________ -->
       <!--<plugin>
         <groupId>org.apache.maven.plugins</groupId>

@@ -27,13 +27,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-
-    #- name : Report jacoco
-    #  run: mvn test -Pjacoco
-      
-    #- name : Report PIT
-    #  run: mvn test -Ppit-test
-      
+     
     #- name : ba-dua report
     #  run: mvn test -Pba-dua-coverage
     
@@ -41,7 +35,7 @@ jobs:
       run: mvn test --no-transfer-progress
       #run: mvn package
      
-    - name: Save Jacoco Reports
+    - name: Save Jacoco Report
       uses: actions/upload-artifact@v3
       with:
         name: Jacoco Report
@@ -53,8 +47,8 @@ jobs:
         name: Pit Report
         path: bookkeeper-server/target/pit-reports
 
-    #- name: Save Ba-dua Report
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #    name: Ba-dua Report
-    #    path: bookkeeper-server/target/badua.xml
+    - name: Save Ba-dua Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: Ba-dua Report
+        path: bookkeeper-server/target/badua.xml
