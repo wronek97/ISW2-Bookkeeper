@@ -41,20 +41,20 @@ jobs:
       run: mvn test --no-transfer-progress
       #run: mvn package
      
-    - name: Save Jacoco Report
+    - name: Save Jacoco Reports
       uses: actions/upload-artifact@v3
       with:
         name: Jacoco Report
         path: target/site/jacoco
 
-    #- name: Save Pit Report
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #    name: Pit Report
-    #    path: target/pit-reports
+    - name: Save Pit Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: Pit Report
+        path: bookkeeper-server/target/pit-reports
 
     #- name: Save Ba-dua Report
     #  uses: actions/upload-artifact@v3
     #  with:
     #    name: Ba-dua Report
-    #    path: target/badua.xml
+    #    path: bookkeeper-server/target/badua.xml
