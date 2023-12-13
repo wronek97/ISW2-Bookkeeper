@@ -27,16 +27,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-     
-    #- name : ba-dua report
-    #  run: mvn test -Pba-dua-coverage
-
-    - name : change permission for Ba-Dua
-      run: chmod +x dfc/report.sh
-    
+        
     - name: Build with Maven
       run: mvn test --no-transfer-progress
       #run: mvn package
+
+    - name : change permission for Ba-Dua
+      run: chmod +x dfc/report.sh
+
+    - name : Ba-Dua Report
+      run: mvn test -Pba-dua-coverage
      
     - name: Save Jacoco Report
       uses: actions/upload-artifact@v3
