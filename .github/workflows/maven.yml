@@ -28,9 +28,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    #- name: Build with Maven
-    #  run: mvn test --no-transfer-progress
-      #run: mvn package
+    - name: Build with Maven
+      run: mvn test --no-transfer-progress
 
     - name : change permission for Ba-Dua
       run: chmod +x dfc/report.sh
