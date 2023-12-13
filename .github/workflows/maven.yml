@@ -40,16 +40,21 @@ jobs:
     - name: Build with Maven
       run: mvn test --no-transfer-progress
       #run: mvn package
-
-    - name: list target
-      run: ls target/bookkeeper-common/site/jacoco -l
-      
-    - name: Save Jacoco, Pit and Ba-dua Reports
+     
+    - name: Save Jacoco Report
       uses: actions/upload-artifact@v3
       with:
-        name: Jacoco, Pit and Ba-dua Reports
-        path: |
-            target/bookkeeper-common/site/jacoco
-    #        target/site/jacoco
-    #        target/pit-reports
-    #        target/badua.xml
+        name: Jacoco
+        path: target/site/jacoco
+
+    #- name: Save Pit Report
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #    name: Pit
+    #    path: target/pit-reports
+
+    #- name: Save Ba-dua Report
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #    name: Ba-dua
+    #    path: target/badua.xml
