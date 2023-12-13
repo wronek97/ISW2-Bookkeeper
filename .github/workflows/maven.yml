@@ -47,8 +47,11 @@ jobs:
         name: Pit Report
         path: bookkeeper-server/target/pit-reports
 
+    - name : change permission for Ba-Dua
+      run: chmod +x dfc/report.sh
+
     - name: Save Ba-dua Report
       uses: actions/upload-artifact@v3
       with:
-        name: Ba-dua Report
+        name: Ba-Dua Report
         path: bookkeeper-server/target/badua.xml
