@@ -30,6 +30,9 @@ jobs:
      
     #- name : ba-dua report
     #  run: mvn test -Pba-dua-coverage
+
+    - name : change permission for Ba-Dua
+      run: chmod +x dfc/report.sh
     
     - name: Build with Maven
       run: mvn test --no-transfer-progress
@@ -47,10 +50,7 @@ jobs:
         name: Pit Report
         path: bookkeeper-server/target/pit-reports
 
-    - name : change permission for Ba-Dua
-      run: chmod +x dfc/report.sh
-
-    - name: Save Ba-dua Report
+    - name: Save Ba-Dua Report
       uses: actions/upload-artifact@v3
       with:
         name: Ba-Dua Report
