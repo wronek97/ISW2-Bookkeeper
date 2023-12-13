@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: 1-Jacoco Report
-        path: target/site/jacoco
+        path: bookkeeper-server/target/site/jacoco
 
     - name: Save Pit Report
       uses: actions/upload-artifact@v3
