@@ -28,15 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Build with Maven
+    - name: Test with Maven
       run: mvn test --no-transfer-progress
 
-    - name : change permission for Ba-Dua
-      run: chmod +x dfc/report.sh
-
-    - name : Ba-Dua Report
-      run: mvn test -Pba-dua-coverage --no-transfer-progress
-     
     - name: Save Jacoco Report
       uses: actions/upload-artifact@v3
       with:
@@ -49,6 +43,12 @@ jobs:
         name: 2-Pit Report
         path: bookkeeper-server/target/pit-reports
 
+    - name: Change Permissions for Ba-Dua
+      run: chmod +x dfc/report.sh
+
+    - name: Test for Ba-Dua Report
+      run: mvn test -Pba-dua-coverage --no-transfer-progress
+     
     - name: Save Ba-Dua Report
       uses: actions/upload-artifact@v3
       with:
