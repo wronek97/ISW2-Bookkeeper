@@ -41,17 +41,17 @@ jobs:
     - name: Save Jacoco Report
       uses: actions/upload-artifact@v3
       with:
-        name: Jacoco Report
+        name: 1-Jacoco Report
         path: target/site/jacoco
 
     - name: Save Pit Report
       uses: actions/upload-artifact@v3
       with:
-        name: Pit Report
+        name: 2-Pit Report
         path: bookkeeper-server/target/pit-reports
 
     - name: Save Ba-Dua Report
       uses: actions/upload-artifact@v3
       with:
-        name: Ba-Dua Report
+        name: 3-Ba-Dua Report
         path: bookkeeper-server/target/badua.xml
