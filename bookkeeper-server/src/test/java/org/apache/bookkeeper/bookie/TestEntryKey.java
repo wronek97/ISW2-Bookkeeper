@@ -54,7 +54,8 @@ public class TestEntryKey {
     @Test
     public void TestHashCode() {
         //(ledgerId * 13) ^ (entryId * 17)
-        assertEquals(6263, entryKeyWithoutParams.hashCode());
+        assertEquals(0, entryKeyWithoutParams.hashCode());
+        assertEquals(6263, entryKeyWithParams.hashCode());
     }
 
 }
