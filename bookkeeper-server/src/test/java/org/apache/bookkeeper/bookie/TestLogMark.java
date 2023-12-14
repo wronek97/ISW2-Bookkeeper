@@ -16,7 +16,7 @@ public class TestLogMark {
     private long testLogFileOffset = 456;
 
     @Test
-    public testDefaultConstructor() {
+    public void testDefaultConstructor() {
         LogMark lm = new LogMark();
 
         assertNotNull(lm);
@@ -25,7 +25,7 @@ public class TestLogMark {
     }
 
     @Test
-    public testConstructorWithParams() {
+    public void testConstructorWithParams() {
         LogMark lm = new LogMark(testLogFileId, testLogFileOffset);
 
         assertNotNull(lm);
@@ -34,7 +34,7 @@ public class TestLogMark {
     }
 
     @Test
-    public testConstructorWithObject() {
+    public void testConstructorWithObject() {
         long logFileId = testLogFileId + 10;
         long logFileOffset = testLogFileOffset - 10;
         LogMark lm = new LogMark(new LogMark(logFileId, logFileOffset));
@@ -45,7 +45,7 @@ public class TestLogMark {
     }
 
     @Test
-    public long testGetLogFileId() {
+    public void testGetLogFileId() {
         LogMark lm1 = new LogMark();
         LogMark lm2 = new LogMark(testLogFileId, testLogFileOffset);
 
@@ -54,7 +54,7 @@ public class TestLogMark {
     }
 
     @Test
-    public long testGetLogFileOffset() {
+    public void testGetLogFileOffset() {
         LogMark lm1 = new LogMark();
         LogMark lm2 = new LogMark(testLogFileId, testLogFileOffset);
 
