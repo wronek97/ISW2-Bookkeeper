@@ -67,8 +67,8 @@ public class TestEntryKey {
         assertEquals(0, comparator.compare(entryKeyWithParams, entryKeyWithParams));
         assertEquals(-1, comparator.compare(entryKeyWithoutParams, entryKeyWithParams));
         assertEquals(1, comparator.compare(entryKeyWithParams, entryKeyWithoutParams));
-        assertEquals(-1, comparator.copare(entryKeyWithParams, new EntryKey(testLedgerId, testEntryId + 1)));
-        assertEquals(1, comparator.copare(entryKeyWithParams, new EntryKey(testLedgerId, testEntryId - 1)));
+        assertEquals(-1, comparator.compare(entryKeyWithParams, new EntryKey(testLedgerId, testEntryId + 1)));
+        assertEquals(1, comparator.compare(entryKeyWithParams, new EntryKey(testLedgerId, testEntryId - 1)));
     }
 
 }

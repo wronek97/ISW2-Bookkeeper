@@ -1,6 +1,8 @@
 package org.apache.bookkeeper.bookie;
 
 import org.apache.bookkeeper.bookie.EntryKey;
+import java.nio.ByteBuffer;
+
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
