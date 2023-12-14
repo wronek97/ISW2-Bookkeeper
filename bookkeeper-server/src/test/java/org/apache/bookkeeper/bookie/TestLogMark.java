@@ -68,7 +68,7 @@ public class TestLogMark {
     public void testReadAndWriteLogMark() {
         LogMark lm1 = new LogMark();
         LogMark lm2 = new LogMark(testLogFileId, testLogFileOffset);
-        ByteBuffer bb = new ByteBuffer();
+        ByteBuffer bb = ByteBuffer.allocate(64);
 
         // lm2 writes its values in the buffer
         lm2.writeLogMark(bb);
