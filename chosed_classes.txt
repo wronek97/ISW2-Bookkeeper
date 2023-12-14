@@ -1,2 +1,5 @@
 bookkeeper-server\src\main\java\org\apache\bookkeeper\bookie\EntryKey.java
 bookkeeper-server\src\main\java\org\apache\bookkeeper\bookie\LogMark.java
+
+// This is a local class defined into EntryKey, also Tested
+bookkeeper-server\src\main\java\org\apache\bookkeeper\bookie\KeyComparator.java
