@@ -367,9 +367,11 @@
             <timeoutFactor>1</timeoutFactor>
             <targetClasses>
               <param>org.apache.bookkeeper.bookie.EntryKey</param>
+              <param>org.apache.bookkeeper.bookie.LogMark</param>
             </targetClasses>
             <targetTests>
               <param>org.apache.bookkeeper.bookie.TestEntryKey</param>
+              <param>org.apache.bookkeeper.bookie.TestLogMark</param>
             </targetTests>
             <avoidCallsTo>
               <avoidCallsTo>java.util.logging</avoidCallsTo>

@@ -76,6 +76,9 @@ public class TestLogMark {
         // lm1 writes its values in the buffer
         lm1.writeLogMark(bb);
 
+        // set cursor to offset 0
+        bb.rewind();
+
         // lm1 reads lm2's values from the buffer and sets its values
         lm1.readLogMark(bb);
 
