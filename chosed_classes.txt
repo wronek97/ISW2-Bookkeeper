@@ -1,3 +1,2 @@
 bookkeeper-server\src\main\java\org\apache\bookkeeper\bookie\EntryKey.java
-
-bookkeeper-common\src\main\java\org\apache\bookkeeper\common\util\MathUtils.java
+bookkeeper-server\src\main\java\org\apache\bookkeeper\bookie\LogMark.java

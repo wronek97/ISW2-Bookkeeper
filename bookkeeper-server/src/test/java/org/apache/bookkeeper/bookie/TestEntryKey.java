@@ -27,35 +27,48 @@ public class TestEntryKey {
     @Test
     public void testConstructorWithParams() {
         assertNotNull(entryKeyWithParams);
-        assertEquals(123, entryKeyWithParams.getLedgerId());
-        assertEquals(456, entryKeyWithParams.getEntryId());
+        assertEquals(testLedgerId, entryKeyWithParams.getLedgerId());
+        assertEquals(testEntryId, entryKeyWithParams.getEntryId());
     }
 
     @Test
     public void TestGetLedgerId() {
         assertEquals(0, entryKeyWithoutParams.getLedgerId());
-        assertEquals(123, entryKeyWithParams.getLedgerId());
+        assertEquals(testLedgerId, entryKeyWithParams.getLedgerId());
     }
 
     @Test
     public void TestGetEntryId() {
         assertEquals(0, entryKeyWithoutParams.getEntryId());
-        assertEquals(456, entryKeyWithParams.getEntryId());
+        assertEquals(testEntryId, entryKeyWithParams.getEntryId());
     }
 
     @Test
     public void TestEquals() {
-        Integer a = Integer.valueOf(66);
+        Integer a = Integer.valueOf(130197);
         assertFalse(entryKeyWithParams.equals(a));
-        assertFalse(entryKeyWithParams.equals(entryKeyWithoutParams));
+        
         assertTrue(entryKeyWithParams.equals(new EntryKey(testLedgerId, testEntryId)));
+        assertFalse(entryKeyWithParams.equals(new EntryKey(testLedgerId, testEntryId+1)));
+        assertFalse(entryKeyWithParams.equals(new EntryKey(testLedgerId+1, testEntryId)));
+        assertFalse(entryKeyWithParams.equals(entryKeyWithoutParams));
     }
 
     @Test
     public void TestHashCode() {
-        //(ledgerId * 13) ^ (entryId * 17)
         assertEquals(0, entryKeyWithoutParams.hashCode());
-        assertEquals(6263, entryKeyWithParams.hashCode());
+        assertEquals((int)((13 * testLedgerId) ^ (17 * testEntryId)), entryKeyWithParams.hashCode());
+    }
+
+    @Test
+    public void TestKeyComparatorCompare() {
+        KeyComparator comparator = new KeyComparator();
+
+        assertEquals(0, comparator.compare(entryKeyWithParams, entryKeyWithParams));
+        assertEquals(-1, comparator.compare(entryKeyWithoutParams, entryKeyWithParams));
+        assertEquals(1, comparator.compare(entryKeyWithParams, entryKeyWithoutParams));
+        assertEquals(-1, comparator.copare(entryKeyWithParams, new EntryKey(testLedgerId, testEntryId + 1)));
+        assertEquals(1, comparator.copare(entryKeyWithParams, new EntryKey(testLedgerId, testEntryId - 1)));
     }
 
 }
