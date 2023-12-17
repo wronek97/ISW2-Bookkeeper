@@ -345,6 +345,11 @@
               <goals>
                 <goal>report</goal>
               </goals>
+              <configuration>
+                <includes>
+                    <include>org/apache/bookkeeper/bookie/**/*</include>
+                </includes>
+            </configuration>
             </execution>
           </executions>
         </plugin>
