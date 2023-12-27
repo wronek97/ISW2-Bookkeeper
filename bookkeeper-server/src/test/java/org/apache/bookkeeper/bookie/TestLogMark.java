@@ -127,6 +127,6 @@ public class TestLogMark {
         LogMark lm = new LogMark(testLogFileId, testLogFileOffset);
         String expectedString = "LogMark: logFileId - " + testLogFileId + " , logFileOffset - " + testLogFileOffset;
 
-        assertEquals(expectedString, lm.toString(), lm.toString());
+        assertEquals(expectedString, lm.toString());
     }
 }
